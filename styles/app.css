@@ -8,3 +8,9 @@
   background-size: 500px;
   height: 500px;
 }
+
+.speaker {
+  position: absolute;
+  z-index: 1;
+  font-size: 25px;
+}

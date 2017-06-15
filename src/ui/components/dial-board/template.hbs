@@ -1,3 +1,7 @@
+{{#each speakers key="@index" as |speaker|}}
+  <speaker-item class="{{speaker.status}}" @name={{speaker.name}} @position={{speaker.position}} />
+{{/each}}
+
 <div class="container">
   <div class="dial-board">
   </div>
