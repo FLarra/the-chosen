@@ -4,6 +4,10 @@
 
 <div class="container">
   <div class="dial-board">
-    <dial-pointer />
+    <dial-pointer @angle={{previousAngle}} />
+  </div>
+
+  <div class="footer">
+    <button class="speaker-select" onclick={{action selectSpeaker}}>Next speaker</button>
   </div>
 </div>

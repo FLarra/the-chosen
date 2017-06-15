@@ -1,6 +1,10 @@
-import Component from '@glimmer/component';
+import Component, { tracked } from '@glimmer/component';
 
 export default class DialBoard extends Component {
+  @tracked previousSelectedSpeaker = null;
+  @tracked previousAngle = 0;
+
+  @tracked
   speakers = [
     {
       name: 'LARRY',
@@ -33,4 +37,27 @@ export default class DialBoard extends Component {
       status: 'never-selected',
     },
   ];
+
+  selectSpeaker() {
+    let speakersCount = this.speakers.length;
+    let nsp = [];
+    this.speakers.forEach(function(speaker, index) {
+      if (speaker.status == 'never-selected'){
+        nsp.push(index);
+      }
+    });
+    if (nsp.length == 0) {
+      alert('Every speaker had talked');
+      return;
+    }
+
+    let newSelection = nsp[Math.floor(Math.random() * nsp.length)];
+
+    if (this.previousSelectedSpeaker) {
+      this.speakers[this.previousSelectedSpeaker].status = 'already-selected';
+    }
+    this.speakers[newSelection].status = 'selected';
+    this.previousSelectedSpeaker = newSelection.toString();
+    this.previousAngle = this.speakers[newSelection].position;
+  }
 };

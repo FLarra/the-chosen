@@ -18,8 +18,32 @@
   margin: -35px 0px 0px -28px;
 }
 
+.selected {
+  color: red;
+}
+
+.already-selected {
+  color: lightgray;
+}
+
+.never-selected {
+  color: green;
+}
+
 .speaker {
   position: absolute;
   z-index: 1;
   font-size: 25px;
+}
+
+.footer {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.speaker-select {
+  width: 120px;
+  height: 30px;
+  border-radius: 15px;
+  font-size: 13px;
 }
