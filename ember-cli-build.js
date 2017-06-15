@@ -1,6 +1,8 @@
 'use strict';
 
 const GlimmerApp = require('@glimmer/application-pipeline').GlimmerApp;
+const funnel = require('broccoli-funnel');
+const merge = require('broccoli-merge-trees');
 
 module.exports = function(defaults) {
   let app = new GlimmerApp(defaults, {
@@ -19,6 +21,7 @@ module.exports = function(defaults) {
   // modules that you would like to import into your application
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
+  return merge([app.toTree(), funnel('styles', { destDir: 'styles' })]);
 
-  return app.toTree();
+  // return app.toTree();
 };

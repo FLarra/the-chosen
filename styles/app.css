@@ -1,0 +1,10 @@
+.container {
+  width: 500px;
+  height: 500px;
+}
+
+.dial-board {
+  background-image: url('images/dial-board.png');
+  background-size: 500px;
+  height: 500px;
+}
