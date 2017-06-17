@@ -47,3 +47,23 @@
   border-radius: 15px;
   font-size: 13px;
 }
+
+.move {
+  transition-duration: 0.7s;
+  transition-property: transform;
+}
+
+.idle {
+  -webkit-animation: mover 2s infinite alternate;
+  animation: mover 2s infinite alternate;
+}
+
+@-webkit-keyframes mover {
+  0% { transform: rotate(0); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes mover {
+  0% { transform: rotate(0); }
+  100% { transform: rotate(360deg); }
+}

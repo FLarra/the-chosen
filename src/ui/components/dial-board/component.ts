@@ -3,6 +3,7 @@ import Component, { tracked } from '@glimmer/component';
 export default class DialBoard extends Component {
   @tracked previousSelectedSpeaker = null;
   @tracked previousAngle = 0;
+  @tracked spinner_status = 'idle';
 
   @tracked
   speakers = [
@@ -39,6 +40,8 @@ export default class DialBoard extends Component {
   ];
 
   selectSpeaker() {
+    this.spinner_status = 'move';
+
     let speakersCount = this.speakers.length;
     let nsp = [];
     this.speakers.forEach(function(speaker, index) {
@@ -59,5 +62,10 @@ export default class DialBoard extends Component {
     this.speakers[newSelection].status = 'selected';
     this.previousSelectedSpeaker = newSelection.toString();
     this.previousAngle = this.speakers[newSelection].position;
+  }
+
+  @tracked('spinner_status')
+  get status() {
+    return this.spinner_status;
   }
 };

@@ -6,6 +6,6 @@ export default class DialPointer extends Component {
 
   didUpdate() {
     let degrees = this.args.angle;
-    this.rotation = 'transform: rotate(' + (degrees - 210) + 'deg)';
+    this.rotation = 'transform: rotate(' + (degrees - 210) + 'deg); -webkit-transform: rotate('+ (degrees - 210) +'deg);';
   }
 };
