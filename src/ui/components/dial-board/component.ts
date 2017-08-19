@@ -64,6 +64,13 @@ export default class DialBoard extends Component {
     this.previousAngle = this.speakers[newSelection].position;
   }
 
+  resetSpeaker() {
+    this.spinner_status = 'idle';
+    this.speakers.forEach(function(speaker) {
+      speaker.status = 'never-selected';
+    });
+  }
+
   @tracked('spinner_status')
   get status() {
     return this.spinner_status;

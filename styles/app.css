@@ -48,6 +48,13 @@
   font-size: 13px;
 }
 
+.speakers-reset {
+  width: 60px;
+  height: 25px;
+  border-radius: 12px;
+  background-color: #ffe1a3;
+}
+
 .move {
   transition-duration: 0.7s;
   transition-property: transform;
